@@ -1,24 +1,26 @@
 import random
 from libs import welcomeMessage
+from libs import acakGoa
 
-while True:
-    goaBenar = int(random.randint(1,4))
 
-    welcomeMessage("WELCOME DI GAME DARMAN")
+goaBenar = int(random.randint(1,4))
+
+welcomeMessage("WELCOME DI GAME DARMAN")
         
-    namaPlayer = input("masukan nama anda : ")
-    while namaPlayer == "":
-        namaPlayer = input("masukan nama yang benar : ")
+namaPlayer = input("masukan nama anda : ")
+while namaPlayer == "":
+    namaPlayer = input("masukan nama yang benar : ")
 
-    bentukGoa = "|_|"
-    goa = [bentukGoa] * 4
-    goaMarmut = goa.copy()
-    goaMarmut[goaBenar - 1] = "|0_0|"
+bentukGoa = "|_|"
+goa = [bentukGoa] * 4
+goaMarmut = goa.copy()
+goaMarmut[goaBenar - 1] = "|0_0|"
         
-    realGoa = ' '.join(goa)
-    realGoaMarmut = ' '.join(goaMarmut)
+realGoa = ' '.join(goa)
+realGoaMarmut = ' '.join(goaMarmut)
     
-
+while True:
+    realGoa,realGoaMarmut,goaBenar = acakGoa()
     print (f'''
     halo {namaPlayer} sekrang kamu pilih goa yang benar ya
     
