@@ -1,30 +1,34 @@
 import random
-
+from libs import welcomeMessage
 
 while True:
-    welcome_message = "WELCOME TO CUYCP GAME"
     goaBenar = int(random.randint(1,4))
 
-    print("*****************************")
-    print(f"*** {welcome_message} ***")
-    print("*****************************")
-
+    welcomeMessage("WELCOME DI GAME DARMAN")
+        
     namaPlayer = input("masukan nama anda : ")
+    while namaPlayer == "":
+        namaPlayer = input("masukan nama yang benar : ")
 
     bentukGoa = "|_|"
     goa = [bentukGoa] * 4
     goaMarmut = goa.copy()
     goaMarmut[goaBenar - 1] = "|0_0|"
-    
+        
     realGoa = ' '.join(goa)
     realGoaMarmut = ' '.join(goaMarmut)
     
+
     print (f'''
     halo {namaPlayer} sekrang kamu pilih goa yang benar ya
     
     {realGoa}
     ''')
+    
     pilihanUser = int(input("menurut kamu goa yang benar yang mana ya [1/2/3/4] : "))
+    
+    while pilihanUser not in [1,2,3,4]:
+        pilihanUser = int(input("menurut kamu goa yang benar yang mana ya [1/2/3/4] : "))
     
     confirmasiUser = input(f"apakah kamu yakin memilih angka {pilihanUser} (y/n) : ")
     if confirmasiUser == "y":
@@ -47,6 +51,7 @@ while True:
     if isDone == "n":
         break
     
+print("Program selesai")
         
         
     
