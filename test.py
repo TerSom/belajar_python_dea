@@ -7,3 +7,10 @@ goaMarmut = goa.copy()
 goaMarmut[benar - 1] = "|0_0|"
 realGoa = ' '.join(goa)
 realGoaMarmut = ' '.join(goaMarmut)
+
+
+
+
+        
+        
+    
